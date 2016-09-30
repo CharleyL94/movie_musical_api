@@ -6,7 +6,7 @@ var requestComplete = function(){
   if(this.status !== 200) return;
 
   var jsonString = this.responseText;
-  response = JSON.parse(jsonString);
+  movies = JSON.parse(jsonString);
   console.log(response);
 
   var movie = function(movieName){
@@ -16,6 +16,8 @@ var requestComplete = function(){
       }
     }
   }
+  var movieName = movie(movieName).title;
+  printMovieName;
 
   var sumbit = document.querySelector('#inputText');
   button.onclick = function(){
@@ -42,7 +44,7 @@ var app = function(){
     movieName = input;
     makeRequest(url, requestComplete)
   }
-  
+  }
 
 
 
